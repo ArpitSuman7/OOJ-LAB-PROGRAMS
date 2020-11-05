@@ -1,0 +1,75 @@
+#include<stdio.h>
+void main()
+{
+    int num1,num2,opt;
+    char ch;
+    do
+    {
+        printf("\n What's on your mind:\n");
+        printf(" ARITHMETIC OPERATIONS: \n\n 1-Addition \n2-Substraction \n3-Multiplication \n4-Division \n\n RELATIONAL OPERATIONS:\n \n5-Equal \n6-Greater than \n7-Smaller than \n8-Power to \n\n RANDOM\n \n9-Area of square(SxS) \n10-Area of rectangle(LxB)\n\n");
+        scanf("%d",&opt);
+        printf("Enter the first Integer :");
+        scanf("%d",&num1);
+        printf("Enter the second Integer :");
+        scanf("%d",&num2);
+        switch(opt)
+        {
+            case 1:
+                printf("Addition of  %d and %d is: %d\n",num1,num2,num1+num2);
+                break;
+            case 2:
+                printf("Substraction of %d  and %d is: %d\n",num1,num2,num1-num2);
+                break;
+            case 3:
+                printf("Multiplication of %d  and %d is: %d\n",num1,num2,num1*num2);
+                break;
+            case 4:
+                if(num2==0)
+                {
+                    printf("The second integer is zero. Devide by zero.\n");
+                }
+                else
+                {
+                    printf("Division of %d  and %d is : %d\n",num1,num2,num1/num2);
+                }
+                break;
+            case 5:
+                if(num1==num2)
+                    printf("Both the numbers are equal");
+                else
+                    printf("Both number are not equal");
+                break;
+            case 6:
+                if(num1>num2)
+                    printf("%d is greater than %d",num1,num2);
+                else if(num2>num1)
+                    printf("%d is greater than %d",num2,num1);
+                else if(num1==num2)
+                    printf("both are equal");
+                break;
+            case 7:
+                if(num1<num2)
+                    printf("%d is smaller than %d",num1,num2);
+                else if(num2<num1)
+                    printf("%d is smaller than %d",num2,num1);
+                else if(num1==num2)
+                    printf("both are equal");
+                break;
+            case 8:
+                printf("%d to the power of %d is %f",num1,num2,pow(num1,num2));
+                break;
+            case 9:
+                printf("Area of square with side %d is %d",num1,num1*num2);
+                break;
+            case 10:
+                printf("Area of rectangle with length %d and breadth %d is %d",num1,num2,num1*num2);
+                break;
+            default:
+                printf("Input correct option\n");
+                break;
+        }
+        printf ("Do you want to repeat the operation Y/N: ");
+        scanf (" %c", &ch);
+    }
+while (ch == 'y' || ch == 'Y');
+}
