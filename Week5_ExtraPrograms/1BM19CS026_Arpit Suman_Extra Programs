@@ -1,0 +1,74 @@
+1.    import java.util.Scanner;
+class Employee{
+   int  empid,empnohrs;
+   String empname;
+    double empbasic,emphra,empda,empit,empgross;
+void setDetails(){
+   Scanner sc = new Scanner(System.in);
+   System.out.println("Enter Employee\n Id: \nName: \nNo. of working hours: \nBasic salary: \nHRA: \nDA: \nIT:");
+   empid = sc.nextInt();
+   empname = sc.next();
+   empnohrs = sc.nextInt();
+   empbasic = sc.nextDouble();
+   emphra = sc.nextDouble();
+   empda = sc.nextDouble();
+   empit = sc.nextDouble();
+}
+void Calcgross(){
+   empgross = empbasic +empbasic*(emphra/100) + empbasic*(empda/100) - empbasic*(empit/100);
+   System.out.println("Employee gross salaray = "+empgross);
+}
+void  Newgross(){
+   if(empnohrs>200){
+      empgross = empgross + ((empnohrs-200)*100);
+   } else if (empnohrs<200){
+      empgross = empgross - ((200-empnohrs)*100);
+   }System.out.println("Employee updated gross salaray = "+empgross);
+}
+}
+class Empmain1{
+   public static void main(String[] args){
+  Employee e1 = new Employee();
+  e1.setDetails();
+  e1.Calcgross();
+  e1.Newgross();
+   }
+}
+
+
+
+2.    import java.util.Scanner;
+class Age{
+String Name;
+int year;
+int month;
+int age;
+void setData(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter name and age in year and month respectively:");
+    Name = sc.next();
+    year = sc.nextInt();
+    month = sc.nextInt();
+}
+int retAge(){
+age = (year*12)+month;
+return age;
+}
+}
+class Agemain{
+    public static void main(String[] args){
+    Age a1 = new Age();
+    Age a2 = new Age();
+    a1.setData();
+    a2.setData();
+    a1.retAge();
+    a2.retAge();
+    if(a1.retAge()>a2.retAge()){
+        System.out.println("1st person is elder"); 
+    }
+    else if(a2.retAge()>a1.retAge()){
+        System.out.println("2nd person is elder");
+        }
+
+    }
+}
