@@ -1,0 +1,59 @@
+import java.util.Scanner;
+class quad
+{
+    public static void main (String args[])
+    {
+        System.out.println("Enter the cofficients a & b & c of quadratic equation ax2+bx+c=0 and where a is not 0");
+        Scanner sc = new Scanner(System.in);
+        double a = sc.nextInt();
+        if (a==0)
+        {
+            System.out.println("a can't be zero");
+        }
+        else
+        {
+        double b=sc.nextInt();
+        double c=sc.nextInt();
+        double z=b*b-4*a*c;
+        Equation eq=new Equation();
+        if (z<0)
+        {
+            System.out.println("There are no real solutions");
+        }
+        else if(z==0)
+        {
+            System.out.println("The solutions are real and equal");
+            eq.check(a,b,c);
+            eq.display();
+        }
+        else
+        {
+            System.out.println("The solutions are real and distinct");
+            eq.check(a,b,c);
+            eq.display();
+        }
+        }
+    }
+}
+class Equation
+{
+    double a;
+    double b;
+    double c;
+    double r1;
+    double r2;
+    void check(double a,double b,double c)
+    {
+        this.a=a;
+        this.b=b;
+        this.c=c;
+        double z=Math.pow( b*b-4*a*c , 0.5 );
+    r1=(-b-z)/(2*a);
+    r2=(-b+z)/(2*a);
+    }
+    void display()
+    {
+        System.out.println(r1);
+        System.out.println(r2);
+    }
+}
