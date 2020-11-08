@@ -1,0 +1,156 @@
+1.    import java.util.Scanner;
+abstract class Solid{
+    float r;
+    float h;
+}
+class Cylinder extends Solid{
+    double area;
+    double volume;
+    
+    void calAreaVolume(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the value of r and h:");
+    r = sc.nextFloat();
+    h = sc.nextFloat();
+    volume = ((3.14*3.14)*r*h);
+    area = (2*(3.14)*r*(r+h)); 
+    System.out.println("The area of the cylinder:"+area);
+    System.out.println("The volume of the cylinder:"+volume);
+    }
+}
+class Sphere extends Solid{
+    double area;
+    double volume;
+    void calAreaVolume1(){  
+        Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the value of r:");
+    r = sc.nextFloat();      
+    volume = (4*3.14*r*r*r)/3;
+    area = 4*3.14*r*r; 
+    System.out.println("The area of the sphere:"+area);
+    System.out.println("The volume of the sphere:"+volume);   
+    }
+}
+class Cone extends Solid{
+    double area;
+    double volume;
+     void calAreaVolume2(){ 
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the value of r and h:");
+    r = sc.nextFloat();
+    h = sc.nextFloat();
+        volume = (3.14*r*r*h)/3;
+        area = 3.14*r*(r + Math.sqrt(r*r + h*h));
+        System.out.println("The area of the cone:"+area);
+    System.out.println("The volume of the cone:"+volume);   
+    }
+}
+class Solidmain{
+    public static void main(String args[]){
+        int option;
+        do{
+    System.out.println("Enter the option: \n1.Cylinder \n2.Sphere \n3.Cone \n4.Exit \n");
+    Scanner sc = new Scanner(System.in);
+    option = sc.nextInt();
+    
+        switch(option){
+            case 1:Cylinder C = new Cylinder();
+                   C.calAreaVolume();
+                   break;
+            case 2:Sphere S = new Sphere();
+                    S.calAreaVolume1();
+                    break;
+            case 3:Cone C1 = new Cone();
+                   C1.calAreaVolume2();
+                   break;
+            case 4:System.exit(0);
+                   break;    
+     }
+    }while (option!=4);
+}
+}
+
+
+
+2.     import java.util.Scanner;
+class Person{
+    String name;
+    Scanner sc = new Scanner(System.in);
+    void Details1(){
+        System.out.println("Enter the name:");
+        name = sc.next();
+        System.out.println("Name:"+name);
+}
+}
+class Employee extends Person{
+    int emp_id;
+    Scanner sc = new Scanner(System.in);
+    void Details2(){
+          Details1();
+        System.out.println("Enter the employee Id:");
+        emp_id = sc.nextInt();
+        System.out.println("Id:"+emp_id);
+}
+}
+class Student extends Person{
+    int st_id;
+    Scanner sc = new Scanner(System.in);
+    void Details3(){
+       Details1();
+       System.out.println("Enter the student Id:");
+        st_id = sc.nextInt();
+        System.out.println("Id:"+st_id);
+    }
+    }
+class Teaching extends Employee{
+    double sal;
+    Scanner sc = new Scanner(System.in);
+    void Details4(){
+      Details2();
+       System.out.println("Enter the teaching employee salary:");
+        sal = sc.nextDouble();
+        System.out.println("Salary:"+sal);
+}     
+}
+class Nonteaching extends Employee{
+    double sal;
+    Scanner sc = new Scanner(System.in);
+    void Details5(){
+       Details2();
+       System.out.println("Enter the non-teaching employee salary:");
+        sal = sc.nextDouble();
+        System.out.println("Salary:"+sal);
+}
+}
+class UG extends Student{
+    int sem;
+    Scanner sc = new Scanner(System.in);
+    void Details6(){
+        Details3();
+        System.out.println("Enter the semester for UG students:");
+        sem = sc.nextInt();
+        System.out.println("Semester:"+sem);
+    }
+}
+class PG extends Student{
+    int sem;
+    Scanner sc = new Scanner(System.in);
+    void Details7(){
+        Details3();
+        System.out.println("Enter the semester for PG students:");
+        sem = sc.nextInt();
+        System.out.println("Semester:"+sem);
+    }
+}
+class Personmain{
+    public static void main(String args[]){
+     Teaching T1 = new Teaching();
+     T1.Details4();
+     Nonteaching N1 = new Nonteaching();
+     N1.Details5();
+     UG U1 = new UG();
+     U1.Details6();
+     PG P1 = new PG();
+     P1.Details7();  
+ }
+}
