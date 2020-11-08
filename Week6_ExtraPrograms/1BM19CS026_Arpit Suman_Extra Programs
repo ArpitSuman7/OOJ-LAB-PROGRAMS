@@ -1,0 +1,149 @@
+1.    import java.util.*;
+class Matrix
+{
+    public static void main(String args[])
+    {
+        int m,n,i,j;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value of rows and coloumns:");
+        m = sc.nextInt();
+        n = sc.nextInt();
+        int matrix[][]= new int[m][n];
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                System.out.println("Enter the element:"+i + j);
+                matrix[i][j]= sc.nextInt();
+            }
+        }
+        System.out.println("Inputted matrix:\n");
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                System.out.print(matrix[i][j]+"\t");           
+            }
+            System.out.println();
+        }
+        int transpose[][]= new int[n][m];
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j<n;j++)
+            {
+                transpose[j][i]=matrix[i][j] ;
+            }
+        }
+        System.out.println("Transpose matrix:\n");
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                System.out.print(transpose[i][j]+"\t");
+            }
+            System.out.println();
+        }
+
+    }
+
+}
+
+
+
+2.   import java.util.Scanner;
+class Circledemo{
+    double radius;
+    double area;
+    double perimeter;
+    double pi = 3.14;
+    void getradius(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the radius of the circle:");
+        radius = sc.nextDouble();
+    }
+    void Calarea(){
+        area = pi*radius*radius;
+    }
+    void Calperimeter(){
+        perimeter = 2*pi*radius;
+    }
+    void Display(){
+        System.out.println("Radius of the circle:"+radius);
+        System.out.println("Area of the circle:"+area);
+        System.out.println("Perimeter of the circle:"+perimeter);
+    }
+}
+class CircledemoMain{
+    public static void main(String args[]){
+        Circledemo D1 = new Circledemo();
+        D1.getradius();
+        D1.Calarea();
+        D1.Calperimeter();
+        D1.Display();
+         }
+}
+
+
+
+3.    import java.util.Scanner;
+class Actor{
+    int Id;
+    String name;
+    int no_of_movies;
+    int no_of_years_exp;
+    float avg;
+    void getdata(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the Id: \nName: \nNumber of movies: \nNumber of years(experience):");
+    Id = sc.nextInt();
+    name = sc.next();
+    no_of_movies = sc.nextInt();
+    no_of_years_exp = sc.nextInt();
+    }
+    float calavg(){
+        avg = (no_of_movies/no_of_years_exp);
+        return avg;
+    }
+    void Display(){
+        System.out.println("Id:"+Id+ "\nName:"+name+ "\nNumber of movies:"+no_of_movies+"\nExperience in years:"+no_of_years_exp);
+    }
+}
+class ActorMain{
+    public static void main(String args[]){
+        Actor a1 = new Actor();
+        Actor a2 = new Actor();
+        a1.getdata();
+        a2.getdata();
+        a1.calavg();
+        a2.calavg();
+        if (a1.calavg()>a2.calavg()){
+            a1.Display();
+        }
+        else{
+            a2.Display();
+        }
+    }
+}
+
+
+
+4.    import java.util.Arrays;
+
+public class CmdArray {
+    public static void main(String[] args) {
+        Double arr[];
+        int n = 0;
+        for(int i=0;i<args.length;i++){
+            n++;
+        }
+        arr = new Double[n];
+        for(int i=0;i<args.length;i++){
+            arr[i] = Double.parseDouble(args[i]);
+        }
+        Arrays.sort(arr);
+        System.out.format("Double array after sort: ");
+        for(int i=0;i<arr.length;i++){
+            System.out.format("%.2f ",arr[i]);
+        }
+    }    
+}
